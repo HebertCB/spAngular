@@ -7,6 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { MatriculaComponent } from './matricula/matricula.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ProfesoresComponent } from './profesores/profesores.component';
+import { LogService } from './log.service';
 
 @NgModule({
   declarations: [
@@ -14,13 +16,14 @@ import { NavbarComponent } from './navbar/navbar.component';
     HomeComponent,
     MatriculaComponent,
     ContactoComponent,
-    NavbarComponent
+    NavbarComponent,
+    ProfesoresComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [LogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
