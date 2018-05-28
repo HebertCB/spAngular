@@ -9,6 +9,8 @@ import { ContactoComponent } from './contacto/contacto.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProfesoresComponent } from './profesores/profesores.component';
 import { LogService } from './log.service';
+import { HttpService } from './http.service';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -21,9 +23,10 @@ import { LogService } from './log.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule    
   ],
-  providers: [LogService],
+  providers: [LogService, HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
