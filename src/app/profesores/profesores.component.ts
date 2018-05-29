@@ -20,8 +20,12 @@ export class ProfesoresComponent implements OnInit {
   onLog(valor){
     this.logServive.escribirLog(valor);
   }
-  onNewUser(nombre){
-    this.dataService.newUser(nombre);
+  onNewUser(nombre, apellido){
+    this.dataService.newUser(nombre, apellido);
+  }
+
+  onUpdate(){
+    this.usuarios = this.dataService.getUsers();
   }
 
 }

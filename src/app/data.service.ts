@@ -10,15 +10,24 @@ export class DataService {
 
   constructor(private httpService : HttpService) { }
 
-  newUser(nombre : string){
-    this.usuarios.push(nombre)
+  newUser(nombre : string, apellido: string){
+    this.usuarios.push(nombre+" "+apellido)
+    this.httpService.sendDatos({nombre: nombre, apellido: apellido})
+      .subscribe(
+        (data: Response) => console.log(data)
+      )
   }
 
-  getUsers(){
+  getUsers():string[]{             
+    let aux: any[] = [];
     this.httpService.getDatos()
       .subscribe(
-        data => {for(let profe of data) this.usuarios.push(profe.nombre+" "+profe.apellido);}
-      )          
-    return this.usuarios;
+        (data: Response) => {  
+          for(let key in data)
+            aux.push(data[key].nombre+" "+data[key].apellido);                 
+        }
+      )  
+      this.usuarios = aux;
+      return this.usuarios;
   }
 }

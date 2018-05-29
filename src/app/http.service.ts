@@ -13,4 +13,11 @@ export class HttpService {
     return this.http.get('https://colegio-http.firebaseio.com/profesores/.json')
     .pipe(map((response: Response)=> response.json()))    
   }
+
+  sendDatos(usuario: any){
+    const datos = JSON.stringify(usuario);
+    return this.http.post('https://colegio-http.firebaseio.com/profesores/.json',datos)
+    .pipe(map((response: Response)=> response.json()))  
+  }
+
 }
