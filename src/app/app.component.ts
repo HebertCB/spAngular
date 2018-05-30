@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { MatriculaComponent } from './matricula/matricula.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { DataService } from './data.service';
+import { ProfesoresComponent } from './profesores/profesores.component';
 
 @Component({
   selector: 'app-root',

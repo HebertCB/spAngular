@@ -1,7 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { MatriculaComponent } from './matricula/matricula.component';
@@ -10,7 +13,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ProfesoresComponent } from './profesores/profesores.component';
 import { LogService } from './log.service';
 import { HttpService } from './http.service';
-import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,10 @@ import { HttpModule } from '@angular/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpModule    
+    FormsModule,
+    ReactiveFormsModule,
+    HttpModule,
+    BrowserAnimationsModule   
   ],
   providers: [LogService, HttpService],
   bootstrap: [AppComponent]

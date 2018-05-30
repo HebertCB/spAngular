@@ -1,3 +1,21 @@
-<p>
-  contacto works!
-</p>
+<div class="mdl-grid">
+  <div class="mdl-cell--6-col mdl-cell--12-col-tablet mdl-cell--3-offset-desktop">
+    <h4>Contáctanos</h4><hr>
+    <form [formGroup]="miFormulario" (ngSubmit)="enviarFormulario()">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label d-100">
+        <input class="mdl-textfield__input" type="text" id="nombre-input" formControlName="nombre">
+        <label class="mdl-textfield__label" for="nombre-input">Nombre</label>        
+      </div>      
+      <span *ngIf="!miFormulario.controls['nombre'].valid">Debe ingresar un nombre de grupo</span>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label d-100">
+        <input class="mdl-textfield__input" type="number" id="celular-input" formControlName="celular">
+        <label class="mdl-textfield__label" for="celular-input">Celular</label>
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label d-100">
+        <input class="mdl-textfield__input" type="email" id="email-input" formControlName="correo">
+        <label class="mdl-textfield__label" for="email-input">Correo electrónico</label>
+      </div>      
+      <button type="submit" class="mdl-button mdl-js-button mdl-button--primary" [disabled]="!miFormulario.valid">Enviar</button>
+    </form>
+  </div>
+</div>

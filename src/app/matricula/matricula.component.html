@@ -1,3 +1,20 @@
-<p>
-  matricula works!
-</p>
+<div class="mdl-grid">
+  <div class="mdl-cell--6-col mdl-cell--12-col-tablet mdl-cell--3-offset-desktop">
+    <h4>Matricular alumno</h4><hr>
+    <form ngNativeValidate (ngSubmit)="enviarForm(f)" #f="ngForm">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label d-100">
+        <input class="mdl-textfield__input" type="email" id="email-input" ngModel name="email" required pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?">
+        <label class="mdl-textfield__label" for="email-input">Correo electrónico</label>
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label d-100">
+        <input class="mdl-textfield__input" type="password" id="password-input" ngModel name="password" required>
+        <label class="mdl-textfield__label" for="password-input">Contraseña</label>
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label d-100">
+        <input class="mdl-textfield__input" type="text" id="nombre-input" ngModel name="nombre" required>
+        <label class="mdl-textfield__label" for="nombre-input">Nombre</label>
+      </div>
+      <button type="submit" class="mdl-button mdl-js-button mdl-button--primary">Enviar</button>
+    </form>
+  </div>
+</div>

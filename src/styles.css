@@ -530,3 +530,8 @@ a img{
     display: none;
   }
 }
+
+/* Personalizado */
+.d-100{
+  width: 100%;
+}
