@@ -13,6 +13,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ProfesoresComponent } from './profesores/profesores.component';
 import { LogService } from './log.service';
 import { HttpService } from './http.service';
+import { MDLUpgrateElementDirective } from './mdl-upgrate-element.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HttpService } from './http.service';
     MatriculaComponent,
     ContactoComponent,
     NavbarComponent,
-    ProfesoresComponent
+    ProfesoresComponent,
+    MDLUpgrateElementDirective
   ],
   imports: [
     BrowserModule,

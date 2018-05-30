@@ -6,12 +6,12 @@ import { Response } from '@angular/http';
   providedIn: 'root'
 })
 export class DataService {
-  private usuarios : string[] = [];
+  private users : string[] = [];
 
   constructor(private httpService : HttpService) { }
 
   newUser(nombre : string, apellido: string){
-    this.usuarios.push(nombre+" "+apellido)
+    this.users.push(nombre+" "+apellido)
     this.httpService.sendDatos({nombre: nombre, apellido: apellido})
       .subscribe(
         (data: Response) => console.log(data)
@@ -27,7 +27,7 @@ export class DataService {
             aux.push(data[key].nombre+" "+data[key].apellido);                 
         }
       )  
-      this.usuarios = aux;
-      return this.usuarios;
+      this.users = aux;
+      return this.users;
   }
 }
